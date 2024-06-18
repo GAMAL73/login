@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+:root{
+    --main-color:#c9abfa;
+    --dark-bg:#15151b;
+    --second-color:#9e4afb;
+}
+.second-color-bg{
+    background-color:var(--second-color);
+}
+body{
+        color: var(--main-color);
+        font-family: "Nunito", sans-serif;
+}
+h1{
+    background: linear-gradient(90deg, var(--main-color) 5%, #ffffff 30%, #ffffff 62%, #ffffff 96%);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+::selection{
+    background-color: var(--main-color);
+    color: white;
+}
+body main {
+        background-color: var(--dark-bg);
+        background-image: url(backall.svg);
+}
+.home{
+    height: 100vh;
+    background-color: var(--dark-bg);
+    background-image: url(backall.svg);
+}
+.form-control:focus{
+    box-shadow: 0 0 0 .25rem var(--main-color);
+}
+.btn{
+    background-color: var(--main-color);
+    color: white;
+}
+.btn:hover{
+    box-shadow: 0 0 0 .25rem #cdaeffa2;
+    color: var;
+}
+#backToLogin,#goToRegister{
+    cursor: pointer;
+}
+span#backToLogin:hover,
+span#goToRegister:hover{
+    color: rgb(255, 255, 255);
+}
+.login_panel.d-none,
+.register_panel.d-none{
+    opacity: 0;
+    transform: translateY(-20px);
+}
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.forms {
+    animation: fadeInOut 0.5s ease;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0); }
+    50% { opacity: 0.5; transform: scale(0.5); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes glitch {
+    0% { transform: translate(0, 0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(2px, -2px); }
+    60% { transform: translate(-2px, -2px); }
+    80% { transform: translate(2px, 2px); }
+    100% { transform: translate(0, 0); }
+}
+
+@keyframes popOut {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(0); opacity: 0; }
+}
+
+.alert-show {
+    animation: fadeIn 0.5s ease-in-out, glitch 0.5s ease-in-out;
+}
+
+.alert-hide {
+    animation: glitch 0.5s ease-in-out, popOut 0.5s ease-in-out 0.5s forwards;
+}
